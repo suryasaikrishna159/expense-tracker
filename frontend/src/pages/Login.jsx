@@ -19,7 +19,7 @@ const Login = () => {
         let payload= state==="signup"?{name,email,password}:{email,password};
         
         try{
-            const res=await axios.post(`http://localhost:5000/api/v1/${endpoint}`,payload,{withCredentials:true});
+            const res=await axios.post(`https://expense-tracker-ce2j.onrender.com/api/v1/${endpoint}`,payload,{withCredentials:true});
             if(res.data.success){
                 toast.success(res.data.msg);
                 state==="signup"?navigate("/"):navigate("/dashboard");
