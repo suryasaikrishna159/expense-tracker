@@ -15,7 +15,7 @@ const Forget = () => {
     const getotp=async(e)=>{
         e.preventDefault();
         try{
-            const res=await axios.post("http://localhost:5000/api/v1/sendotp",{email},{withCredentials:true});
+            const res=await axios.post("https://expense-tracker-ce2j.onrender.com/api/v1/sendotp",{email},{withCredentials:true});
             if(res.data.success){
                 toast.success(res.data.msg);
                 setotpsent(true);
@@ -33,7 +33,7 @@ const Forget = () => {
         e.preventDefault();
         try{
             
-            const res=await axios.post("http://localhost:5000/api/v1/forgetpassword",{email,password,otp},{withCredentials:true});
+            const res=await axios.post("https://expense-tracker-ce2j.onrender.com/api/v1/forgetpassword",{email,password,otp},{withCredentials:true});
             if(res.data.success){
                 toast.success(res.data.msg);
                 setotpsent(false);
