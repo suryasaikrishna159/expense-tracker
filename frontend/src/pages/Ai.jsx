@@ -14,7 +14,7 @@ const Ai = () => {
             if(query===""){
                 return toast.error("missing query");
             }
-            const res=await axios.post("http://localhost:5000/api/v1/ai",{query},{withCredentials:true});
+            const res=await axios.post("https://expense-tracker-ce2j.onrender.com/api/v1/ai",{query},{withCredentials:true});
             if(res.data.success){
                 setLoading(false);
                 setans(res.data.answer);
@@ -33,7 +33,7 @@ const Ai = () => {
 
     const historyhandler=async()=>{
         try{
-            const result=await axios.get("http://localhost:5000/api/v1/getchats",{withCredentials:true});
+            const result=await axios.get("https://expense-tracker-ce2j.onrender.com/api/v1/getchats",{withCredentials:true});
             if(result.data.success){
                 sethistory(result.data.chats);
             }
