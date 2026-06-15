@@ -9,7 +9,7 @@ const Navbar = () => {
         e.preventDefault();
 
         try{
-            const result=await axios.post("http://localhost:5000/api/v1/logout",{},{withCredentials:true});
+            const result=await axios.post("https://expense-tracker-ce2j.onrender.com/api/v1/logout",{},{withCredentials:true});
 
             if(result.data.success){
                 toast.success(result.data.msg);
