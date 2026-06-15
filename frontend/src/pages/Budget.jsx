@@ -19,7 +19,7 @@ const Budget = () => {
     const submithandler=async(e)=>{
         e.preventDefault();
         try{
-            const result=await axios.put("http://localhost:5000/api/v1/setbudget",{month,year,Food:food,Transport:transport,Shopping:shopping,Bills,Entertainment,Health,Education,Other},{withCredentials:true});
+            const result=await axios.put("https://expense-tracker-ce2j.onrender.com/api/v1/setbudget",{month,year,Food:food,Transport:transport,Shopping:shopping,Bills,Entertainment,Health,Education,Other},{withCredentials:true});
             if(result.data.success){
                 toast.success(result.data.msg);
             }
