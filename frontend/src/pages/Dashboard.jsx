@@ -33,7 +33,7 @@ const Dashboard = () => {
 
         try {
             const result = await axios.get(
-                `http://localhost:5000/api/v1/expenses?${endpoint}`,
+                `https://expense-tracker-ce2j.onrender.com/api/v1/expenses?${endpoint}`,
                 {
                     withCredentials: true
                 }
@@ -53,7 +53,7 @@ const Dashboard = () => {
     const deleterow = async (id) => {
         try {
             const result = await axios.delete(
-                `http://localhost:5000/api/v1/expenses/${id}`,
+                `https://expense-tracker-ce2j.onrender.com/api/v1/expenses/${id}`,
                 {
                     withCredentials: true
                 }
@@ -84,7 +84,7 @@ const Dashboard = () => {
     const saveEdit = async () => {
         try {
             const result = await axios.put(
-                `http://localhost:5000/api/v1/expenses/${editId}`,
+                `https://expense-tracker-ce2j.onrender.com/api/v1/expenses/${editId}`,
                 editData,
                 {
                     withCredentials: true
@@ -107,7 +107,7 @@ const Dashboard = () => {
 
     const insightshandler=async()=>{
         try{
-            const result=await axios.get("http://localhost:5000/api/v1/insights",{withCredentials:true});
+            const result=await axios.get("https://expense-tracker-ce2j.onrender.com/api/v1/insights",{withCredentials:true});
             
             if(result.data.success){
                 setinsights(result.data.insights);
