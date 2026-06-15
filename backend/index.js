@@ -95,11 +95,11 @@ app.post("/api/v1/login",async (req,res)=>{
 
         const token=jwt.sign({id:userexists._id},process.env.jwtsecret,{expiresIn:"1d"});
         res.cookie("token",token,{
-            httpOnly: true,
-            secure: false, 
-            sameSite: "lax", 
-            maxAge: 1 * 24 * 60 * 60 * 1000
-        })
+            httpOnly:true,
+            secure:true,
+            sameSite:"none",
+            maxAge:24*60*60*1000
+        });
 
 
         res.json({
