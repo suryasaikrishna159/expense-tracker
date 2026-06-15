@@ -24,7 +24,7 @@ const Monthlyreport = () => {
 
         try {
             const result = await axios.get(
-                `http://localhost:5000/api/v1/monthlyreport?month=${month}&year=${year}`,
+                `https://expense-tracker-ce2j.onrender.com/api/v1/monthlyreport?month=${month}&year=${year}`,
                 {
                     withCredentials: true
                 }
