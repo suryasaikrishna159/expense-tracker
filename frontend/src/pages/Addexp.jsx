@@ -12,7 +12,7 @@ const Addexp = () => {
     const submithandler=async(e)=>{
         e.preventDefault();
         try{
-            const result=await axios.post("http://localhost:5000/api/v1/expenses",{title,amount,category,date},{withCredentials:true});
+            const result=await axios.post("https://expense-tracker-ce2j.onrender.com/api/v1/expenses",{title,amount,category,date},{withCredentials:true});
             if(result.data.success){
                 toast.success(result.data.msg);
                 settitle("");
